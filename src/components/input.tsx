@@ -6,14 +6,15 @@ interface InputProps {
   placeholder: string;
 }
 
+
 const Input: React.FC<InputProps> = ({ value, onChange, placeholder }) => {
   return (
     <input
-      type="number"
+      type="string"
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className="border-2 border-black p-2 rounded w-40 "
+      className="no-spinner border-2 border-black p-2 rounded w-40 "
     />
   );
 };
