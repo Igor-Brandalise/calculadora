@@ -38,28 +38,32 @@ function App() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-500">
-      <div className="flex flex-col items-center gap-4 border-2 rounded-3xl h-[450px] w-[600px] p-6 bg-white">
-        <Input
-          value={input1}
-          onChange={(e) => setInput1(Number(e.target.value))}
-          placeholder="Insira o primeiro número"
-          
-        />
-        <Input
-          value={input2}
-          onChange={(e) => setInput2(Number(e.target.value))}
-          placeholder="Insira o segundo número"
-        />
-        <Operador operador={operador} setOperador={setOperador} />
-        <button
-          onClick={calcular}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Calcular
-        </button>
-        {resultado !== null && (
-          <p className="text-lg font-semibold">Resultado: {resultado}</p>
-        )}
+      <div className="flex flex-col items-center gap-8 border-2 rounded-3xl h-[450px] w-[500px] p-6 bg-white justify-center">
+        <div className="flex gap-8">
+          <Input
+            value={input1}
+            onChange={(e) => setInput1(Number(e.target.value))}
+            placeholder="Insira o primeiro número"
+          />
+          <Input
+            value={input2}
+            onChange={(e) => setInput2(Number(e.target.value))}
+            placeholder="Insira o segundo número"
+          />
+        </div>
+        <div className="flex flex-col gap-3 items-center">
+          <Operador operador={operador} setOperador={setOperador} />
+
+          <button
+            onClick={calcular}
+            className="bg-blue-500 text-white px-4 py-2 rounded-2xl w-50 mt-3"
+          >
+            Calcular
+          </button>
+          {resultado !== null && (
+            <p className="text-lg font-semibold ">Resultado: {resultado}</p>
+          )}
+        </div>
       </div>
     </div>
   );
